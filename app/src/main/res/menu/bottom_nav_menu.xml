@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="GPS"
+        android:icon="@drawable/gps" />
+    <item
+        android:id="@+id/menu"
+        android:title="MENU"
+        android:icon="@drawable/menu" />
+
+    <item
+        android:id="@+id/compass"
+        android:title="COMPASS"
+        android:icon="@drawable/compass"/>
+
+
+
+
+
+</menu>

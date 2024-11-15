@@ -7,23 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.example.canicomhandheld.CompassActivity
 import com.example.canicomhandheld.GpsLocation
 import com.example.canicomhandheld.R
+import com.example.canicomhandheld.SettingScreen
+import com.example.canicomhandheld.TrainingScreen
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MenuFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MenuFragment : Fragment() {
-
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +29,24 @@ class MenuFragment : Fragment() {
         val gpsBtn = view.findViewById<LinearLayout>(R.id.gpsBtn)
         gpsBtn.setOnClickListener {
           val intent = Intent(requireContext(), GpsLocation::class.java)
+            startActivity(intent)
+        }
+
+        val compassBtn = view.findViewById<LinearLayout>(R.id.compassBtn)
+        compassBtn.setOnClickListener {
+            val intent = Intent(requireContext(), CompassActivity::class.java)
+            startActivity(intent)
+        }
+
+        val trainingBtn = view.findViewById<LinearLayout>(R.id.btnTraining)
+        trainingBtn.setOnClickListener {
+            val intent = Intent(requireContext(), TrainingScreen::class.java)
+            startActivity(intent)
+        }
+
+        val btnSettings = view.findViewById<LinearLayout>(R.id.btnSettings)
+        btnSettings.setOnClickListener {
+            val intent = Intent(requireContext(), SettingScreen::class.java)
             startActivity(intent)
         }
     }

@@ -4,4 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="txt_dog_name">Demo Dog</string>
     <string name="txt_online">Online\n</string>
+    <string name="txt_address">Address\n</string>
+    <string name="_7txt_45_rue_de_la_bergeresse_45161_olivet_cedex_france">745 rue de la Bergeresse 45161 Olivet Cedex FRANCE</string>
+    <string name="txt_contact_us">Contact Us</string>
+    <string name="txt_france">France\n</string>
+    <string name="txt_info_numaxes_com">info@numaxes.com\n</string>
+    <string name="txt_other_countries">Other Countries</string>
+    <string name="txt_export_numaxes_com">export@numaxes.com\n</string>
 </resources>

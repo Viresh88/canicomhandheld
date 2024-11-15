@@ -41,6 +41,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/compassBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -120,6 +121,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btnTraining"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -173,6 +175,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btnSettings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"

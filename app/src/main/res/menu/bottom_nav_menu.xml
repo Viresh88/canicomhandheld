@@ -3,16 +3,16 @@
     <item
         android:id="@+id/home"
         android:title="GPS"
-        android:icon="@drawable/gps" />
-    <item
-        android:id="@+id/menu"
-        android:title="MENU"
-        android:icon="@drawable/menu" />
-
+        android:icon="@drawable/gpsicon" />
     <item
         android:id="@+id/compass"
         android:title="COMPASS"
-        android:icon="@drawable/compass"/>
+        android:icon="@drawable/compassicon" />
+
+    <item
+        android:id="@+id/menu"
+        android:title="MENU"
+        android:icon="@drawable/menu"/>
 
     <item
         android:id="@+id/training"
@@ -23,8 +23,6 @@
         android:id="@+id/settings"
         android:title="Settings"
         android:icon="@drawable/settings"/>
-
-
 
 
 

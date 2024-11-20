@@ -6,55 +6,71 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.canicomhandheld.R
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var googleMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        // Initialize the map
+        val mapFragment = childFragmentManager
+            .findFragmentById(R.id.mapFragment) as SupportMapFragment
+        mapFragment.getMapAsync { map ->
+            googleMap = map
+
+            // Add custom dog markers
+            addCustomDogMarkers()
+        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun addCustomDogMarkers() {
+        // Example coordinates
+        val dog1Location = LatLng(18.5074, 73.8077)
+        val dog2Location = LatLng(18.5074, 73.8077)
+        val dog3Location = LatLng(18.5074, 73.8077)
+
+        // Add markers with custom icons
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(dog1Location)
+                .title("Dog 1")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.dog1)) // Custom dog image
+        )
+
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(dog2Location)
+                .title("Dog 2")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.dog2))
+        )
+
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(dog3Location)
+                .title("Dog 3")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.dog3))
+        )
+
+        // Move the camera to the first dog's location
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(dog1Location, 10f))
     }
+
 }

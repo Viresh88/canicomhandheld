@@ -12,9 +12,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:text="1"
-        android:fontFamily="@font/poppins"
-        android:textColor="@color/cal_item_color_selector"
+        android:textColor="#262727"
         android:textSize="16sp"
-        android:gravity="center"
-        android:background="@drawable/day_background_selector" />
+        android:gravity="center"/>
 </LinearLayout>

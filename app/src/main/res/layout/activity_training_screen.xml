@@ -34,28 +34,36 @@
             android:paddingBottom="16dp">
 
             <ImageButton
+                android:id="@+id/btnVibration"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:background="@drawable/vibration" />
+                android:background="@android:color/transparent"
+                android:src="@drawable/vibrationicon" />
 
             <ImageButton
+                android:id="@+id/btnWifi"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:background="@drawable/wifi" />
+                android:background="@android:color/transparent"
+                android:src="@drawable/wifiicon" />
 
             <ImageButton
+                android:id="@+id/btnNotification"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:background="@drawable/notification2" />
+                android:background="@android:color/transparent"
+                android:src="@drawable/notificationicon" />
 
             <ImageButton
+                android:id="@+id/btnFlash"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:background="@drawable/flash2" />
+                android:background="@android:color/transparent"
+                android:src="@drawable/flashicon" />
         </LinearLayout>
 
 

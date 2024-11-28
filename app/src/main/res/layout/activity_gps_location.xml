@@ -69,6 +69,7 @@
             android:contentDescription="Compass" />
 
         <ImageButton
+            android:id="@+id/btnFence"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/map"
@@ -76,6 +77,7 @@
             android:contentDescription="Map" />
 
         <ImageButton
+            android:id="@+id/btnFlag"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/flag"
@@ -83,6 +85,7 @@
             android:contentDescription="Map" />
 
         <ImageButton
+            android:id="@+id/btnMap"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/vector"
@@ -123,7 +126,7 @@
                 android:textColor="#757575" />
         </LinearLayout>
 
-        <!-- Direction and Start Buttons -->
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

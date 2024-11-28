@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/dialog_background">
+
+    <ImageView
+        android:id="@+id/closeicon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:src="@drawable/closeicon"
+        android:contentDescription="Close"
+        android:padding="4dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Name of the Flagpoint"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etFenceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Home Location"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:textSize="16sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:gravity="end">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:background="@drawable/dialog_btn_background"
+            android:layout_marginEnd="8dp"
+            android:padding="12dp"
+            android:textColor="#898989" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:background="@drawable/dialog_btn_background"
+            android:padding="12dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="#898989" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

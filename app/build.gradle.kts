@@ -38,6 +38,7 @@ android {
 dependencies {
 
     implementation("com.google.android.gms:play-services-maps:18.1.0")
+    implementation ("com.airbnb.android:lottie:5.2.0")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.7.0")

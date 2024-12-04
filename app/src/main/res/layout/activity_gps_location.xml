@@ -1,16 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
+    <!-- Map Fragment -->
     <fragment
         android:id="@+id/map"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:name="com.google.android.gms.maps.SupportMapFragment" />
 
+    <!-- Horizontal ScrollView -->
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,24 +24,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="8dp"
-                android:src="@drawable/avatar1"/>
+                android:src="@drawable/avatar1" />
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="8dp"
                 android:src="@drawable/avatar2" />
-
-
         </LinearLayout>
     </HorizontalScrollView>
 
-
+    <!-- Floating Action Buttons -->
     <LinearLayout
         android:id="@+id/fabContainer"
         android:layout_width="wrap_content"
@@ -58,7 +56,7 @@
             android:layout_height="50dp"
             android:src="@drawable/calender"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Layers" />
+            android:contentDescription="Calendar" />
 
         <ImageButton
             android:id="@+id/compassimg"
@@ -74,7 +72,7 @@
             android:layout_height="50dp"
             android:src="@drawable/map"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Map" />
+            android:contentDescription="Fence" />
 
         <ImageButton
             android:id="@+id/btnFlag"
@@ -82,7 +80,7 @@
             android:layout_height="50dp"
             android:src="@drawable/flag"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Map" />
+            android:contentDescription="Flag" />
 
         <ImageButton
             android:id="@+id/btnMap"
@@ -93,15 +91,16 @@
             android:contentDescription="Map" />
     </LinearLayout>
 
+    <!-- Content Layout Above Navigation -->
     <LinearLayout
+        android:id="@+id/bottomContentLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/bottomNavigationBar"
         android:background="#FFFFFF"
         android:padding="16dp"
         android:orientation="horizontal"
         android:elevation="4dp">
-
 
         <LinearLayout
             android:layout_width="0dp"
@@ -126,7 +125,6 @@
                 android:textColor="#757575" />
         </LinearLayout>
 
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -143,42 +141,47 @@
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
-    <!-- Bottom Navigation Icons -->
+
     <LinearLayout
+        android:id="@+id/bottomNavigationBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
         android:gravity="center"
-        android:background="#FFFFFF"
-        android:padding="8dp">
+        android:background="#FFFFFF">
 
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:src="@drawable/bookmark"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Bookmark" />
 
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:src="@drawable/history"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="History" />
 
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:src="@drawable/notification"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Notifications" />
 
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:src="@drawable/flash"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Flash" />
     </LinearLayout>
+
 </RelativeLayout>

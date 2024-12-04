@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Canicomhandheld"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityDeviceList"
+            android:exported="false" />
+        <activity
             android:name=".DogList"
             android:exported="false" />
         <activity

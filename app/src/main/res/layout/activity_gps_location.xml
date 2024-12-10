@@ -11,7 +11,7 @@
         android:layout_marginTop="5dp"
         android:name="com.google.android.gms.maps.SupportMapFragment" />
 
-    <!-- Horizontal ScrollView -->
+
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- Floating Action Buttons -->
+
     <LinearLayout
         android:id="@+id/fabContainer"
         android:layout_width="wrap_content"
@@ -91,7 +91,7 @@
             android:contentDescription="Map" />
     </LinearLayout>
 
-    <!-- Content Layout Above Navigation -->
+
     <LinearLayout
         android:id="@+id/bottomContentLayout"
         android:layout_width="match_parent"

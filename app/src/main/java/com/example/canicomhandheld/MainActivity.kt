@@ -1,5 +1,7 @@
 package com.example.canicomhandheld
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -28,6 +30,24 @@ class MainActivity : AppCompatActivity() {
                   true
               }
 
+              R.id.compass -> {
+                  val intent = Intent(this, CompassActivity::class.java)
+                  startActivity(intent)
+                  true
+              }
+
+              R.id.training -> {
+                  val intent = Intent(this, TrainingScreen::class.java)
+                  startActivity(intent)
+                  true
+              }
+
+              R.id.settings -> {
+                  val intent = Intent(this, SettingScreen::class.java)
+                  startActivity(intent)
+                  true
+              }
+
               else -> false
           }
 
@@ -51,6 +71,10 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragment_container, fragment)
             .addToBackStack(null)
             .commit()
+
+    }
+
+    private fun loadActivity(activity: Activity){
 
     }
 }

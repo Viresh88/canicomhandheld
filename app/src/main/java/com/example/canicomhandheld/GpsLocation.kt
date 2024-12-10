@@ -2,6 +2,7 @@ package com.example.canicomhandheld
 
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -30,6 +31,8 @@ class GpsLocation : AppCompatActivity(), OnMapReadyCallback {
     private var polyline: Polyline? = null
     private var isPathVisible = false // To track if the path is displayed
 
+    private lateinit var imageButtons: List<ImageButton>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gps_location)
@@ -41,40 +44,37 @@ class GpsLocation : AppCompatActivity(), OnMapReadyCallback {
         val btnFence = findViewById<ImageButton>(R.id.btnFence)
         val btnFlag = findViewById<ImageButton>(R.id.btnFlag)
         val btnMap = findViewById<ImageButton>(R.id.btnMap)
-        val buttons = listOf(calendarimg, compassimg, btnFence, btnFlag, btnMap)
+       imageButtons = listOf(calendarimg, compassimg, btnFence, btnFlag, btnMap)
 
 
-        buttons.forEach { button ->
-            button.setOnClickListener {
-                toggleButtonBackground(button)
-            }
-        }
+
         calendarimg.setOnClickListener {
-            toggleButtonBackground(calendarimg)
+            activateButton(it as ImageButton)
             togglePathOnMap()
         }
 
 
         compassimg.setOnClickListener {
-            val intent = Intent(this, CompassActivity::class.java)
-            startActivity(intent)
+            activateButton(it as ImageButton)
+//            val intent = Intent(this, CompassActivity::class.java)
+//            startActivity(intent)
         }
 
 
         btnFence.setOnClickListener {
-            toggleButtonBackground(btnFence)
+            activateButton(it as ImageButton)
             showFenceDialog()
         }
 
 
         btnFlag.setOnClickListener {
-            toggleButtonBackground(btnFlag)
+            activateButton(it as ImageButton)
             showFlagDialog()
         }
 
 
         btnMap.setOnClickListener {
-            toggleButtonBackground(btnMap)
+            activateButton(it as ImageButton)
             showMapTypeDialog()
         }
     }
@@ -185,18 +185,15 @@ class GpsLocation : AppCompatActivity(), OnMapReadyCallback {
         dialog.show()
     }
 
-    private fun toggleButtonBackground(button: ImageButton) {
-        val selectedColor = ContextCompat.getColor(this, R.color.green) // Assuming #03AA00 is defined as 'green'
-        val defaultColor = ContextCompat.getColor(this, R.color.transparent) // Assuming transparent is default
-
-        val currentBackground = (button.background as? ColorDrawable)?.color
-
-        if (currentBackground == selectedColor) {
-            // Reset to default color
-            button.setBackgroundColor(defaultColor)
-        } else {
-            // Change to selected color
-            button.setBackgroundColor(selectedColor)
+    private fun activateButton(selectedButton: ImageButton) {
+        // Reset all buttons to default state
+        for (button in imageButtons) {
+            button.setBackgroundResource(android.R.color.transparent) // Remove background
+            button.setColorFilter(null) // Reset the icon color
         }
+
+        // Set the background and icon color of the selected button
+//        selectedButton.setBackgroundColor(getColor(R.color.green)) // Background color
+//        selectedButton.setColorFilter(getColor(R.color.white), PorterDuff.Mode.SRC_IN) // Icon color
     }
 }
